@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const FetchData = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState("Loading");
 
   useEffect(() => fetchInfo(), [])
 
@@ -17,9 +17,16 @@ const FetchData = () => {
 
   return (
     <div>
-        <pre>
-        {JSON.stringify(data, null, 2)}
-        </pre>
+        {
+         (data === "Loading") ? (<h1>Loading...</h1>) : 
+         (
+            <pre>
+                {
+                    JSON.stringify(data, null, 2)
+                }
+            </pre>
+         ) 
+        }
     </div>
   )
 }
