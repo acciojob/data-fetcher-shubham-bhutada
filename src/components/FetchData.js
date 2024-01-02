@@ -18,9 +18,10 @@ const FetchData = () => {
   return (
     <div>
         {
-         (data === "Loading") ? (<h1>Loading...</h1>) : 
+         (data === "Loading") ? (<p>Loading...</p>) : 
          (
             <pre>
+                <h1>Data Fetched from API</h1>
                 {
                     JSON.stringify(data, null, 2)
                 }
